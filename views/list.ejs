@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
 		<title>To Do List</title>
 	</head>
 	<body>
-		<h1>It's a <%= kindOfDay %>!</h1>
 
+		<h1> <%= kindOfDay %></h1>
+
+		<ul>
+<!-- 	<li>Buy Food</li>
+			<li>Cook Food</li>
+			<li>Eat Food</li> -->
+
+		<%	for (let i=0; i <=newListItems.length-1; i++) { %>
+			<li><%= newListItems[i] %></li>
+<% } %>
+
+<!-- at newListItems we are going to render the value at index i -->
+		</ul>
+
+		<form action = "/" method = "post">
+
+			<input type="text" name="newItem">
+			<!-- submit button triggers the post request in the form to the /home route -->
+			<button type="submit" name="button">Add</button>
+		</form>
 
 	</body>
 </html>
