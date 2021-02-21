@@ -3,29 +3,32 @@
 	<head>
 		<meta charset="utf-8">
 		<title>To Do List</title>
+    <link href="css/styles.css" rel="stylesheet">		
 	</head>
 	<body>
+		<div class="box" id="heading">
+					<h1> <%= kindOfDay %></h1>
 
-		<h1> <%= kindOfDay %></h1>
+		</div>
 
-		<ul>
-<!-- 	<li>Buy Food</li>
-			<li>Cook Food</li>
-			<li>Eat Food</li> -->
+		<div class="box">
+			<%	for (let i=0; i <=newListItems.length-1; i++) { %>
+			<div class="item">
+				<input type="checkbox">
+				<p><%= newListItems[i] %></p>
 
-		<%	for (let i=0; i <=newListItems.length-1; i++) { %>
-			<li><%= newListItems[i] %></li>
-<% } %>
+			</div>
+		<% } %>
+
+		<form class="item" action = "/" method = "post">
+			<input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+			<!-- submit button triggers the post request in the form to the /home route -->
+			<button type="submit" name="button">+</button>
+		</form>
+		</div>
+
 
 <!-- at newListItems we are going to render the value at index i -->
-		</ul>
-
-		<form action = "/" method = "post">
-
-			<input type="text" name="newItem">
-			<!-- submit button triggers the post request in the form to the /home route -->
-			<button type="submit" name="button">Add</button>
-		</form>
 
 	</body>
 </html>

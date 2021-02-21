@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 
 // create a new instance of express
 const app = express();
+// tells express to serve up this public folder as a static resource, it can have our css, imgs, js in it
+app.use(express.static('public'));
 
 let items = ['Buy food', 'Cook Food', 'Eat Food'];
 // items increases ++ by one and newitem gets pushed onto the end of the array
@@ -20,6 +22,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 //  when we first load up our home page we go through this get route
 // and we render our list.ejs passing in 2 variables kindofday and newlistitems which is set to equal the items array
 app.get('/', function(req, res) {
+		res.sendFile(__dirname + '/list.ejs');
+
 
 let today = new Date();
 let currentDay = today.getDay();
