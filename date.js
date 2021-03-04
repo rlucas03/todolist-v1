@@ -1,31 +1,29 @@
 // This is how we can  create our own modules and require them
-module.exports.getDate = getDate;
 // binding this module to getDate function
 // wont run function and give return statement without parenthesis ()
 
 // this code in date.js is completely re-useable, we can require it and use it anywhere we like
-function getDate() {
-	let today = new Date();
+// anonymous function
+// shortened module.exports to just exports.
+exports.getDate = function() {
+	const today = new Date();
 
-	let options = {
+	const options = {
 		weekday: 'long',
 		day: 'numeric',
 		month: 'long',
 	};
 
-	let day = today.toLocaleDateString('en-US', options);
-	return day; 
+	return today.toLocaleDateString('en-US', options);
+	  
 }
-module.exports.getDay = getDay;
+exports.getDay = function () {
+	const today = new Date();
 
-function getDay() {
-	let today = new Date();
-
-	let options = {
+	const options = {
 		weekday: 'long'
 	};
 
-	let day = today.toLocaleDateString('en-US', options);
-	return day; 
+	return today.toLocaleDateString('en-US', options);
+
 }
-console.log(module.exports);

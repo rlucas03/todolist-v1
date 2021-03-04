@@ -7,8 +7,8 @@ const app = express();
 // tells express to serve up this public folder as a static resource, it can have our css, imgs, js in it
 app.use(express.static('public'));
 
-let items = ['Buy food', 'Cook Food', 'Eat Food'];
-let workItems = [];
+const items = ['Buy food', 'Cook Food', 'Eat Food'];
+const workItems = [];
 // items increases ++ by one and newitem gets pushed onto the end of the array
 // this whole thing is a fundamental part of templating
 
@@ -46,15 +46,15 @@ that has the name of kindOfDay and the
 valiue we are giving it is the value of
 our variable day. 
  */
- 	let day = date.getDate();
-
+ 	const day = date.getDate();
+// rendering day as our list title
 
 	res.render('list', { listTitle: day, newListItems: items });
 });
 
 // handle post requests to the home / route
 app.post('/', function (req, res) {
-	let item = req.body.newItem;
+	const item = req.body.newItem;
 	// console.log(req.body); lists the request.body
 
 	if (req.body.list === 'Work') {
