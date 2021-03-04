@@ -3,4 +3,4 @@ secrets.txt
 #comment
 
 # Ignore the node_modules directory
-node_modules/
+node_modules
