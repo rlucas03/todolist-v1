@@ -3,6 +3,7 @@ secrets.txt
 #comment
 
 # Ignore the node_modules directory
+# Dependencies 
 node_modules
 node_modules/
 /node_modules
